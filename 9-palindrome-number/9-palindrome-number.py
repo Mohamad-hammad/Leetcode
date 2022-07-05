@@ -13,8 +13,6 @@ class Solution(object):
             mylist.append(int(x%10))
             x=int(x)/10
         
-        if len(mylist)==1:
-            return True
         k=len(mylist)-1
         for i in range(len(mylist)):
             if mylist[i]!=mylist[k]:
