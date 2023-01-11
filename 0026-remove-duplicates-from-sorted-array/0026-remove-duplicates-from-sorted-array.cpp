@@ -7,18 +7,14 @@ public:
         
         while(r<nums.size())
         {
-            if(nums[w]==nums[r])
-            {
-                r++;
-            }
-            else
+            if(nums[w]!=nums[r])
             {
                 w++;
                 nums[w]=nums[r];
                 k++;
-                r++;
+                
             }
-          
+          r++;
         }
         
         
