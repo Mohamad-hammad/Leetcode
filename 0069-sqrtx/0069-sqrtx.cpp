@@ -1,39 +1,20 @@
 class Solution {
 public:
     int mySqrt(int x) {
-        for(long long i = 1; i<=x;i++)
+        long long start=0,end = INT_MAX,srqt = 0;
+        while(start<=end)
         {
-            
-           if(i*i>x)
-           {
-               return i-1;
-           }
-            else if(i*i == x)
+            long long mid = start + (end - start)/2;
+            if(mid*mid<=x)
             {
-                return i;
+                srqt = mid;
+                start = mid +1; 
+            }
+            else
+            {
+                end = mid -1;
             }
         }
-        return x;
+        return srqt;
     }
 };
-
-/*
-
-8 = 8%2 = 0 , 2 x 2 ( if not ) 
-                        then 8%3 , 5* 3 = 15
-
-3 = 3%1 = 0, 1x1
-3 % 2 = 1 ; 1x2 !> 3
-3 %3 = 0 ; 3x3 
-
- int mod = x%i ;
-            if(mod == 0)
-            {
-                if(i*i == x)
-                    return i;
-                else if(i*i>x)
-                    return i-1;
-            }
-            else if(mod*i>x)
-                return i-1;
-*/
