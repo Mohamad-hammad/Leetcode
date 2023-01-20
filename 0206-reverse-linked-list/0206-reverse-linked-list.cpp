@@ -17,24 +17,15 @@ public:
             return head;
         temp = head->next;
         temp2 = temp->next;
-         head->next = nullptr;
+        head->next = nullptr;     
         while(temp!=nullptr)
         {
             temp->next = head;
             
             head = temp;
             temp = temp2;
-            if(temp2 == nullptr)
-                return head;
-            if(temp2->next == nullptr)
-            {
-                temp->next = head;
-            
-                head = temp;
-                temp = temp2;
-                break;
-            }
-                
+           if(temp2 == nullptr)
+               return head;
             temp2 = temp->next;
             
         }
