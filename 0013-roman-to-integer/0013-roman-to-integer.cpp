@@ -15,7 +15,6 @@ public:
         {
             if(umap.at(s[i]) < umap.at(s[i+1]))
                result -= umap.at(s[i]);
-            
             else
                 result += umap.at(s[i]);
         }
