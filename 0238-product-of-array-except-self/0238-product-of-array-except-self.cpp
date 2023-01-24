@@ -4,14 +4,17 @@ public:
         vector<int> newvec;
         newvec.push_back(1); 
         newvec.push_back(nums[0]); 
+        
         for(int i=2;i<nums.size();i++)
         {
            newvec.push_back(nums[i-1]*newvec[i-1]);   
         }
+        
         reverse(nums.begin(), nums.end());
         vector<int> newvec2;
         newvec2.push_back(1); 
         newvec2.push_back(nums[0]); 
+        
         for(int i=2;i<nums.size();i++)
         {
            newvec2.push_back(nums[i-1]*newvec2[i-1]);   
