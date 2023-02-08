@@ -30,34 +30,30 @@ public:
         int row = getRowIndex(matrix,target);
         if(row == -1)
             return false;
-        
-            int i = row;
-                for(int j = 0; j<matrix[i].size();j++)
+        int i = row;
+        for(int j = 0; j<matrix[i].size();j++)
+        {
+            int start = 0;
+            int end = matrix[i].size()-1;
+            int mid = (start+end)/2;
+            while(start<=end)
+            {
+                mid = start + (end - start) / 2;
+                if(target==matrix[i][mid])
                 {
-                    int start = 0;
-                    int end = matrix[i].size()-1;
-                    int mid = (start+end)/2;
-                    while(start<=end)
-                    {
-                        mid = start + (end - start) / 2;
-                        if(target==matrix[i][mid])
-                        {
-                            return true;
-                        }
-                        else if(target>matrix[i][mid])
-                        {
-                            start = mid+1;
-                        }
-                        else
-                        {
-                            end = mid-1;
-                        }
-                    }
-                    return false;
+                    return true;
                 }
-            
-            
-        
+                else if(target>matrix[i][mid])
+                {
+                    start = mid+1;
+                }
+                else
+                {
+                    end = mid-1;
+                }
+            }
+            return false;
+        }       
         return false;
     }
 };
